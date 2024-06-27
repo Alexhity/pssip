@@ -1,0 +1,84 @@
+.modal{
+	border: 1px solid black;
+    width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.modal .title{
+	font-size: 23px;
+}
+
+.modal .block{
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+}
+
+.modal .block .item1{
+	width: 70px;
+}
+
+.modal .block .item2{
+	width: 400px;
+}
+
+.modal .block input{
+	width: 300px;
+}
+
+.modal .item3{
+	width: 290px;
+	text-align: center;
+	padding: 10px;
+}
+
+.modal .item4{
+	width: 403px;
+	text-align: center;
+	padding: 10px;
+}
+
+.modal .item5{
+	width: 488px;
+	text-align: center;
+	padding: 10px;
+}
+
+.modal .button{
+	display: flex;
+    justify-content: right;
+	align-items: center; 
+	padding: 10px;
+	width: 500px;
+}
+
+button{
+	border-radius: 5px;
+}
+
+.modal .item5{
+	width: 488px;
+	text-align: center;
+	padding: 10px;
+}
+
+.modal .item6{
+	width: 310px;
+	text-align: center;
+}
+
+.modal .item66{
+	width: 575px;
+	text-align: center;
+}
+
+.modal .item7{
+	width: 215px;
+	text-align: center;
+}
+
+.modal .item77{
+	width: 586px;
+	text-align: center;
+}

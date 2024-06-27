@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вариант №17</title>
+</head>
+<body>
+    <p>Бородич Александра Валерьевна</p>
+    <div id="element2">29.04.2006</div>
+    <div><p id="element3">29.04.2006</p></div>
+    <img src="1.png" alt="" style="width: 300px;">
+
+  <p>Дата и время: <span id="date"></span></p>
+    <p>Размер HTML-документа: <span id="size"></span> байт</p>
+  <script>
+        // Функция для получения информации о дате и размере HTML-документа
+        function getDocumentInfo() {
+            setInterval(function() {
+                let currentDate = new Date().toLocaleString();
+                let currentSize = document.documentElement.outerHTML.length;
+            
+                document.getElementById("date").innerText = currentDate;
+                document.getElementById("size").innerText = currentSize;
+                alert(currentDate+" | "+currentSize);
+            }, 3000);
+        }
+
+        getDocumentInfo()
+
+        // Удаление элемента №2 при клике на него
+        document.getElementById("element2").addEventListener("click", function() {
+            this.remove();
+        });
+
+        document.getElementById("element3").addEventListener("click", function() {
+            this.style.color = "red"; 
+            this.style.backgroundColor = "green"; 
+            this.style.fontFamily = "Arial"; 
+            this.style.fontSize = "16px";
+            this.style.border = "2px solid yellow";
+			this.style.fontWeight = "bold";
+        });
+
+        function checkCookiesEnabled() {
+            if (navigator.cookieEnabled) {
+                alert("Cookies включены в браузере.");
+            } else {
+                alert("Cookies отключены в браузере.");
+            }
+        }
+
+        checkCookiesEnabled();
+
+        // window.onload = function() {
+        //     setTimeout(function() {
+        //         window.close();
+        //     }, 2000); // Закрытие окна через 2 секунды
+        // };
+    </script>    
+</body>
+</html>

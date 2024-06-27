@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Minutes</title>
+	<script src="script.js" defer></script>
+    <script>
+        function showMinutes() {
+            var currentDate = new Date();
+            var currentMinutes = currentDate.getMinutes();
+            alert("Текущее количество минут в текущем часу: " + currentMinutes);
+        }
+    </script>
+</head>
+<body>
+	<div class="1">
+		<p><b>Задание 1</b></p>
+		<button onclick="showMinutes()">Показать год</button>
+	</div>
+    <div class="2">
+		<p><b>Задание 2</b></p>
+		<script>
+			function repeatNameSurname(n) {
+				var surname = "Бородич";
+				var name = "Александра";
+				var count = 0;
+				var repetitions = n + 5;
+	
+				while (count < repetitions) {
+					document.write(surname + " " + name + "<br>");
+					count++;
+				}
+			}
+	
+			var n = 5;
+			repeatNameSurname(n);
+		</script>
+	</div>
+	<div class="3">
+		<p><b>Задание 3</b></p>
+		<script>
+			// Создание массива из 10 целых элементов
+			var arr = [5, -4, 8, -7, 12, -11, 6, -9, 14, -15];
+			
+			// Вывод исходного массива
+			document.write("Исходный массив: " + arr + "<br>");
+			
+			// Вывод отрицательных нечетных элементов массива
+			document.write("Отрицательные нечетные элементы: <br>");
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i] < 0 && arr[i] % 2 !== 0) {
+					document.write(arr[i] + "<br>");
+				}
+			}
+			
+			// Переворачивание массива	
+			var reversedArr = arr.slice().reverse();
+			
+			// Вывод перевернутого массива
+			document.write("Перевернутый массив: " + reversedArr + "<br>");
+		</script>
+	</div>
+	<div class="4">
+		<form id="calcForm">
+			<label for="a">a:</label>
+			<input type="number" id="a" name="a" required>
+			<br>
+			<label for="b">b:</label>
+			<input type="number" id="b" name="b" required>
+			<br>
+			<label for="c">c:</label>
+			<input type="number" id="c" name="c" required>
+			<br>
+			<label for="x">x:</label>
+			<input type="number" id="x" name="x" required>
+			<br>
+			<button type="button" onclick="calculate()">Рассчитать</button>
+		</form>
+		<div id="result"></div>
+	</div>
+	<div class="5">
+		<p><b>Задание 5</b></p>
+		<div id="output"></div>
+	</div>
+</body>
+</html>

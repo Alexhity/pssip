@@ -1,0 +1,88 @@
+body{
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.book_cover{
+	position: relative;
+}
+
+.book_cover img{
+	width: 250px;
+}
+
+.button_green{
+	position: absolute;
+	bottom: 4%;
+	background-color: rgb(164, 255, 145);
+	width: 100px;
+	border-radius: 5px;
+	border: 3px solid white;
+	text-align: center;
+	padding: 3px;
+
+}
+
+.button_green span{
+	color: rgb(14, 81, 0);
+}
+
+.authors{
+	color: gray;
+	font-weight: 400;
+	padding: 1px;
+	font-size: 17px;
+	line-height: 0;
+}
+
+a{
+	color: rgb(255, 145, 0);
+}
+
+.icon_1{
+	background-color: rgb(255, 241, 223);
+	width: 60px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 1px;
+}
+
+.icon_1 .orange{
+	color: rgb(255, 145, 0);
+}
+
+.icon2 img{
+	width: 17px;
+
+}
+
+.icon2{
+	background-color: rgb(203, 227, 255);
+	width: 70px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 1px;
+}
+
+.icon2 .blue{
+	color: rgb(73, 107, 255);
+}
+
+.icons{
+	display: flex;
+	justify-content: left;
+}
+
+.ic{
+	background-color: white;
+	width: 10px;
+}
+
+.money img{
+	width: 17px;
+}
+
+.money{
+	color: rgb(255, 145, 0);
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Микросетки</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script8.js"></script>
+</head>
+<body>
+	<div class="modal">
+		<form action="#" id="myForm">
+			<div>
+				<p class="title">Информация о получателе</p>
+				<div class="block">
+					<div class="item1">
+						ФИО
+					</div>
+					<div class="item2">
+						<input type="text" id="name">
+					</div>
+				</div>
+				<div class="block">
+					<div class="item1">
+						E-mail
+					</div>
+					<div class="item2">
+						<input type="text" id="email">
+					</div>
+				</div>
+				<div class="block">
+					<div class="item1">
+						Телефон
+					</div>
+					<div class="item2">
+						<input type="tel" id="number">
+					</div>
+				</div>
+			</div>
+			<div>
+				<p class="title">Способ и адрес доставки</p>
+				<div class="block2">
+					<div class="item3"><input type="radio" name="dostavka" >Почтой россии - <b>249 руб.</b></div>
+					<div class="item4"><input type="radio" name="dostavka">Курьером по Санкт-Петербургу - <b>199 руб.</b></div>
+					<div class="item5"><input type="radio" name="dostavka">Самовывоз от метро Площадь Восстания - <b>Бесплатно</b></div>
+				</div>
+				<div class="block">
+					<div class="item1">
+						Город
+					</div>
+					<div class="item2">
+						<input type="text" id="city">
+					</div>
+				</div>
+				<div class="block">
+					<div class="item1">
+						Индекс
+					</div>
+					<div class="item2">
+						<input type="text" id="indeks">
+					</div>
+				</div>
+				<div class="block">
+					<div class="item1">
+						Адрес
+					</div>
+					<div class="item2">
+						<input type="tel" id="adress">
+					</div>
+				</div>
+			</div>
+			<div>
+				<p class="title">Способ оплаты</p>
+				<div class="block2">
+					<div class="item6"><input type="radio" name="oplata">
+						<b>Электронными деньгами</b>
+					</div>
+					<div class="item66">
+						Оплата любым способом через платежный сервис PayAnyWay
+					</div>
+					<p></p>
+					<div class="item7">
+						<input type="radio" name="oplata">
+						<b>Наличными</b>
+					</div>
+					<div class="item77">
+						Оплата производится курьеру в руки в момент получения заказа
+					</div>
+				</div>
+			</div>
+			<p></p>
+			<div class="button">
+				<button type="submit">Перейти к оплате</button>
+			</div>
+		</div>
+		</form>
+		<script>
+			document.getElementById("myForm").addEventListener("submit", function(event) {
+			let name = document.getElementById("name").value;
+			let email = document.getElementById("email").value;
+			let number = document.getElementById("number").value;
+			let city = document.getElementById("city").value;
+			let indeks = document.getElementById("indeks").value;
+			let adress = document.getElementById("adress").value;
+
+			if (name === "" || email === "" || number === "" || city === "" || indeks === "" || adress === "") {
+				alert("Пожалуйста, заполните все поля формы.");
+				event.preventDefault(); // Отмена отправки формы
+			}
+});
+		</script>
+		<script>
+			document.getElementById("myForm").addEventListener("submit", function(event) {
+				let email = document.getElementById("email").value;
+				let number = document.getElementById("number").value;
+	
+				// Проверка наличия "@" в email
+				if (!email.includes("@")) {
+					alert("Пожалуйста, введите корректный email адрес.");
+					event.preventDefault(); // Отмена отправки формы
+				}
+	
+				// Проверка наличия "+" в номере телефона
+				if (!number.includes("+")) {
+					alert("Пожалуйста, введите номер телефона в формате с плюсом.");
+					event.preventDefault(); // Отмена отправки формы
+				}
+			});
+		</script>
+		<script>
+			document.getElementById("myForm").addEventListener("submit", function(event) {
+			let name = document.getElementById("name").value;
+			let email = document.getElementById("email").value;
+			let number = document.getElementById("number").value;
+			let city = document.getElementById("city").value;
+			let indeks = document.getElementById("indeks").value;
+			let adress = document.getElementById("adress").value;
+
+            // Проверка длины полей (не более 10 символов)
+            if (name.length > 10 || email.length > 10 || number.length > 10 || city.length > 10 || indeks.length > 10 || address.length > 10) {
+                alert("Пожалуйста, укажите данные не более чем из 10 символов.");
+                event.preventDefault(); // Отмена отправки формы
+            }
+        });
+		</script>
+</body>
+</html>
