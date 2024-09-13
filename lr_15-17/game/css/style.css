@@ -1,0 +1,17 @@
+canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+#restartButton{
+  margin-left: 640px;
+  margin-top: 40px;
+  color: rgb(88, 88, 88);
+  font-size: larger;
+  font-style: arial;
+  font-weight: bolder;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  background-color: rgb(154, 255, 107);
+}
