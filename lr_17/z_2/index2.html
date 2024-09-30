@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задание 2</title>
+	<link rel="stylesheet" href="style2.css">
+	<script src="scrypt2.js"></script>
+</head>
+<body>
+	<div class="1">
+		<h3>События мыши</h3>
+		<button id="mouseButton">Нажми меня</button>
+		<p id="mouseEvent"></p>
+	</div>
+		<h3>Событие Drag & Drop</h3>
+		<div id="dropZone">Перетащите сюда файл</div>
+		<p id="textDrop"></p>
+	</div>
+	<div class="3">
+		<h3>События указателя</h3>
+			<div id="pointerArea" style="width: 300px; height: 200px; background-color: lightgreen; margin: 20px; text-align: center; line-height: 200px;">Укажите на поле</div>
+			<p id="pointerEvent"></p>
+	</div>
+	<div class="4">
+		<h3>События полосы прокрутки</h3>
+		<div id="scrollInfo">Позиция прокрутки: 0</div>
+	</div>
+	<div class="5">
+		<h3>События сенсорных экранов</h3>
+		<div id="touchArea" style="width: 300px; height: 200px; background-color: lightgreen; margin: 20px; text-align: center; line-height: 200px;">
+			Сенсорная область
+		</div>
+		<p id="statusText"></p>
+	</div>
+	<div class="6">
+		<h3>События, связанные с таймером</h3>
+		<button id="startTimer">Запустить таймер</button>
+		<p id="timerEvent"></p>
+	</div>
+
+	<script>
+		 // 1 - Событие мыши
+		document.getElementById('mouseButton').addEventListener('click', function() {
+        document.getElementById('mouseEvent').innerText = 'Кнопка мыши нажата!'; });
+
+		// 2 - Drag & Drop 
+		const dropZone = document.getElementById('dropZone');
+    	dropZone.addEventListener('dragover', function(event) {
+        event.preventDefault();});
+    	dropZone.addEventListener('drop', function(event) {
+        event.preventDefault();
+        document.getElementById('textDrop').innerText = 'Файл успешно перетащен!';});
+
+		// 3 - События указателя
+		const pointerArea = document.getElementById('pointerArea');
+  		pointerArea.addEventListener('pointerdown', function() {
+        document.getElementById('pointerEvent').innerText = 'Указатель наведен!';});
+
+		// 4 - События полосы прокрутки
+			// Функция для обработки события прокрутки
+			function handleScroll() {
+        	// Получаем текущую позицию прокрутки
+        	const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        	// Обновляем текст в элементе
+        	document.getElementById('scrollInfo').innerText = 'Позиция прокрутки: ' + scrollPosition;
+    		}
+
+    		// Добавляем обработчик события прокрутки
+    		window.addEventListener('scroll', handleScroll);
+
+		// 6
+		const touchArea = document.getElementById('touchArea');
+    const statusText = document.getElementById('statusText');
+    let isMoving = false;
+    let timer2;
+
+    function resetStatus() {
+        clearTimeout(timer2);
+        isMoving = false;
+        statusText.innerText = 'Курсор остается на месте';
+    }
+
+    touchArea.addEventListener('mouseenter', function() {
+        statusText.innerText = 'Курсор в данной области';
+    });
+
+    touchArea.addEventListener('mouseleave', function() {
+        clearTimeout(timer2);
+        statusText.innerText = 'Курсора нет в данной области';
+    });
+
+    touchArea.addEventListener('mousemove', function() {
+        if (!isMoving) {
+            statusText.innerText = 'Курсор двигается';
+            isMoving = true;
+        }
+        
+        clearTimeout(timer2);
+        timer2 = setTimeout(resetStatus, 1000); // 1 секунда без движения
+    });
+
+    // Обработка сенсорных событий
+    touchArea.addEventListener('touchstart', function() {
+        statusText.innerText = 'Курсор в данной области (сенсор)';
+    });
+
+    touchArea.addEventListener('touchend', function() {
+        statusText.innerText = 'Курсора нет в данной области (сенсор)';
+    });
+
+    touchArea.addEventListener('touchmove', function() {
+        if (!isMoving) {
+            statusText.innerText = 'Курсор двигается (сенсор)';
+            isMoving = true;
+        }
+        
+        clearTimeout(timer);
+        timer = setTimeout(resetStatus, 1000); // 1 секунда без движения
+    });
+
+		// 7 - События, связанные с таймером
+		let timer;
+   		document.getElementById('startTimer').addEventListener('click', function() {
+        clearInterval(timer);
+        let count = 0;
+        timer = setInterval(function() {
+            count++;
+            document.getElementById('timerEvent').innerText = 'Таймер: ' + count + ' секунд';
+            if (count === 10) {
+                clearInterval(timer);
+                alert('Таймер завершен!');
+            }
+        }, 1000);});
+	</script>
+</body>
+</html>
