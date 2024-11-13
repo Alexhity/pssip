@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NEBO</title>
+	<link rel="icon" href="source/img/main_icon.jpg" type="image/jpg">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>	
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script src="js/scrypt.js"></script>
+	
+</head>
+<body>
+	<header> 
+		<!-- меню бургер -->
+		<div class="container d-block">
+			<div class="row justify-content-between">
+				<div class="col-2">
+					<button aria-expanded="false"
+							class="bars" data-bs-target="#sidebarik"
+							data-bs-toggle="offcanvas">
+						<i class="fa fa-bars"></i>
+					</button>
+				</div>
+				<div class="offcanvas offcanvas-start w-100 p-0" data-bs-backdrop="static" id="sidebarik" tabindex="-1">
+					<div class="offcanvas-body pt-05">
+						<div class="row">
+							<div class="col-11 p-0 gradient-block h-100">
+								<!-- Category List -->
+								<div class="row d-none py-3 sidebar_menu justify-content-between bg__light__blue mx-05">
+									<img class="col-1 p-2 p-sm-3 p-md-4" src="source/img/sidebar_back.svg" onclick="sidebar_list_back(this.id)" style="cursor:pointer" alt="Бургер">
+									<div class="col-1 p-0">
+									</div>
+								</div>
+								<!-- Additional Options -->
+								<div class="additional-options">
+									<ul class="d-block p-0">
+										<li><a href="#">Салоны</a></li>
+										<li><a href="#">Распродажа</a></li>
+										<li><a href="#">Акции</a></li>
+										<li><a href="#">Статус заказа</a></li>
+										<li><a href="#">Скупка</a></li>
+										<li><a href="#">Оплата заказа</a></li>
+										<li><a href="#">Гарантия и возврат</a></li>
+										<li><a href="#">Контакты</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-1">
+								<div class="row justify-content-center py-2">
+									<button aria-label="Close" class="btn-close col-2" data-bs-dismiss="offcanvas" type="button"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container_1 mobile-none tablet-none"> 
+			<div class="header-top">
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+						Выбор города
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<li><a class="dropdown-item" href="#" data-message="Санкт-Петербург">Санкт-Петербург</a></li>
+						<li><a class="dropdown-item" href="#" data-message="Москва">Москва</a></li>
+						<li><a class="dropdown-item" href="#" data-message="Екатеринбург">Екатеринбург</a></li>
+					</ul>
+				</div>
+				<nav class="nav">
+					<a href="#">Салоны</a>
+					<a href="#">Распродажа</a>
+					<a href="#" class="active">Акции</a>
+					<a href="#">Статус заказа</a>
+					<a href="#" class="active">Скупка</a>
+					<a href="#" class="active">Оплата и доставка</a>
+					<a href="#" class="active">Гарантия и возврат</a>
+					<a href="#" class="active">Контакты</a>
+				</nav>
+			</div>
+		</div>
+		
+		
+		<div class="container_2">
+			<div class="header-middle">
+				<div class="icon">
+						<img class="ic" src="source/img/icon.jpg" alt="icon">
+						<img class="N" src="source/img/N.jpg" alt="N">
+						<img class="E" src="source/img/E.jpg" alt="E">
+						<img class="B" src="source/img/B.jpg" alt="B">
+						<img class="O" src="source/img/O.jpg" alt="O">
+				</div>
+				<div class="text">СЕТЬ ЮВЕЛИРНЫХ САЛОНОВ</div>
+			</div>
+			<div class="header-middle_2">
+				<div class="tel mobile-none tablet-none">8 800 450 10 10</div>
+				<button id="openModalBtn1" title="Нажмите, чтобы заказать звонок" class="zakaz">Заказать звонок</button>
+			</div>
+		</div>
+
+		<div class="container_3 mobile-none tablet-none">
+			<div class="button">
+				<button type="button" class="button_3">
+					<img src="source/img/catalog_button.png" alt="Бургер">
+					Каталог
+				</button>
+			</div>
+			<div class="search">
+				<i class="fas fa-search"></i>
+				<input type="text" placeholder="Поиск в NEBO">
+			</div>
+			<div class="text">
+				<a href="#">Подарочная карта</a>
+			</div>
+			<div class="icons">
+				<button><img src="source/img/icon_shop.png" alt="Иконка"></button>
+				<button><img src="source/img/icon_heart.png" alt="Иконка"></button>
+				<button><img src="source/img/icon_person.png" alt="Иконка"></button>
+			</div>
+		</div>
+	</header>
+	<main>
+
+		<div class="container_4">
+			<div class="slider-container">
+				<div class="slider">
+				  <img class="item_slider" src="source/img/collection_1.jpg" alt="Коллекция №1">
+				  <img class="item_slider" src="source/img/collection_2.jpg" alt="Коллекция №2">
+				  <img class="item_slider" src="source/img/collection_3.jpg" alt="Коллекция №3">
+				</div>
+				<!-- <button class="prev-button1 mobile-none tablet-none" type="button" onclick="previousSlide()" aria-label="Посмотреть предыдущий слайд">&lt;</button>
+				<button class="next-button1 mobile-none tablet-none" type="button" onclick="nextSlide()" aria-label="Посмотреть следующий слайд">&gt;</button> -->
+			  </div>
+		</div>
+
+		<div class="container_5">
+			<div class="container_5_2">
+				<div class="feature">
+					<img src="source/img/container_5_star.jpg" alt="star" class="feature-icon">
+					<p>Стильный и современный дизайн</p>
+				</div>
+				<div class="feature">
+					<img src="source/img/container_5_brilliant.jpg" alt="diamond" class="feature-icon">
+					<p>Только настоящие природные камни</p>
+				</div>
+				<div class="feature">
+					<img src="source/img/container_5_check.jpg" alt="check" class="feature-icon">
+					<p>Безупречное качество изделий</p>
+				</div>
+				<div class="feature">
+					<img src="source/img/container_5_reserve.jpg" alt="reserve" class="feature-icon">
+					<p>Простая и удобная система возврата</p>
+				</div>
+				<div class="feature">
+					<img src="source/img/container_5_time.jpg" alt="time" class="feature-icon">
+					<p>Быстрая доставка по всей России</p>
+				</div>
+				<div class="feature">
+					<img src="source/img/container_5_laptop.jpg" alt=laptop class="feature-icon">
+					<p>Безопасная система онлайн-оплаты</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="main_container">
+			<div class="container_6">
+				<p>Новые коллекции</p>
+				<div class="carousel_container">
+					<button class="prev-button2 mobile-none tablet-none">&lt;</button>
+					<div class="carousel">
+						<div class="carousel_item1">
+							<img src="source/img/container_6_item1.jpg" alt="Украшение" class="size">
+							<img src="source/img/null_heart.svg" id="like1" onclick="like(this.id)" class="overlay" alt="Избранное">
+							<div class="lines">
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+							</div>
+							<div class="rating">
+								<span class="star"><img src="source/img/container6_stars.jpg" alt="Рейтинг"></span>
+								<span class="rating_text">13 отзывов</span>
+							</div>
+							<div class="text">
+								<div class="text1">Комплект: <b>«Морское сияние»</b></div>
+								<div class="text2">Золотая цепочка с подвеской и серьгами с сапфирами </div>
+								<div class="price">
+									<span class="old-price">249 500 ₽</span> 
+									<span class="discount">-30%</span>
+									<span class="new-price"><b>174 650 ₽</b></span>
+								</div>
+							</div>
+						</div>
+						<div class="carousel_item1">
+							<img src="source/img/container_6_item2.jpg" alt="Украшение">
+							<img src="source/img/null_heart.svg" id="like2" onclick="like(this.id)" class="overlay" alt="Избранное">
+							<div class="lines">
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+							</div>
+							<div class="rating">
+								<span class="star"><img src="source/img/container6_allstars.jpg" alt="Рейтинг"></span>
+								<span class="rating_text">21 отзыв</span>
+							</div>
+							<div class="text">
+								<div class="text1">Комплект: <b>«Вечная любовь»</b></div>
+								<div class="text2">Золотая цепочка с кулоном и кольцо с бриллиантами</div>
+								<div class="price">
+									<span class="new-price"><b>83 900 ₽</b></span>
+								</div>
+							</div>
+						</div>
+						<div class="carousel_item2">
+							<img src="source/img/container_6_item3.jpg" alt="Украшение">
+							<img src="source/img/null_heart.svg" id="like3" onclick="like(this.id)" class="overlay" alt="Избранное">
+							<div class="lines">
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+							</div>
+							<div class="rating">
+								<span class="star"><img src="source/img/container6_nullstars.jpg" alt="Рейтинг"></span>
+								<span class="rating_text"></span>
+							</div>
+							<div class="text">
+								<div class="text1">Комплект: <b>«Морское сияние»</b></div>
+								<div class="text2">Золотая цепочка с подвеской и серьгами с сапфирами </div>
+								<div class="price">
+									<span class="old-price">249 500 ₽</span> 
+									<span class="discount">-30%</span>
+									<span class="new-price"><b>174 650 ₽</b></span>
+								</div>
+							</div>
+						</div>
+						<div class="carousel_item2">
+							<img src="source/img/container_6_item4.jpg" alt="Украшение">
+							<img src="source/img/null_heart.svg" id="like4" onclick="like(this.id)" class="overlay" alt="Избранное">
+							<div class="lines">
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+							</div>
+							<div class="rating">
+								<span class="star"><img src="source/img/container6_allstars.jpg" alt="Рейтинг"></span>
+								<span class="rating_text">4 отзыва</span>
+							</div>
+							<div class="text">
+								<div class="text1">Комплект: <b>«Морское сияние»</b></div>
+								<div class="text2">Золотая цепочка с подвеской и серьгами с сапфирами </div>
+								<div class="price">
+									<span class="old-price">249 500 ₽</span> 
+									<span class="discount">-30%</span>
+									<span class="new-price"><b>174 650 ₽</b></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="next-button2 mobile-none tablet-none">&gt;</button>
+				</div>
+			</div>
+			<div class="container_7">
+				<p>Популярные изделия</p>
+				<div class="carousel_container7">
+					<button class="prev-button2 mobile-none tablet-none">&lt;</button>
+					<div class="carousel7">
+						<div class="carousel_item7">
+							<img src="source/img/container7_item1.jpg" class="effect1" alt="Украшение">
+							<div class="lines">
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+							</div>
+							<div class="text">
+								<div class="rating">
+									<span class="star"><img src="source/img/container6_nullstars.jpg" alt="Рейтинг"></span>
+								</div>
+								<div class="text2">Золотые серьги с бриллиантами (английский замок) </div>
+								<div class="price">
+									<span class="old-price">295 000 ₽</span> 
+									<span class="discount">-25%</span>
+									<span class="new-price"><b>221 250 ₽</b></span>
+								</div>
+							</div>
+						</div>
+						<div class="carousel_item7">
+							<img src="source/img/container7_item2.jpg" class="effect2" alt="Украшение">
+							<div class="lines">
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+							</div>
+							
+							<div class="text">
+								<div class="rating">
+									<span class="star"><img src="source/img/container6_allstars.jpg" alt="Рейтинг"></span>
+									<span class="rating_text">21 отзыв</span>
+								</div>
+								<div class="text2">Золотая цепочка полновесная, плетение двойной ромб </div>
+								<div class="price">
+									<span class="new-price"><b>83 900 ₽</b></span>
+								</div>
+							</div>
+						</div>
+						<div class="carousel_item7">
+							<img src="source/img/container7_item3.jpg" class="effect3" alt="Украшение">
+							<div class="lines">
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+							</div>
+							<div class="text">
+								<div class="rating">
+									<span class="star"><img src="source/img/container6_allstars.jpg" alt="Рейтинг"></span>
+									<span class="rating_text">4 отзыва</span>
+								</div>
+								<div class="text2">Золотая цепочка с подвеской и серьгами с сапфирами </div>
+								<div class="price">
+									<span class="old-price">359 500 ₽</span> 
+									<span class="discount">-25%</span>
+									<span class="new-price"><b>269 500 ₽</b></span>
+								</div>
+							</div>
+						</div>
+						<div class="carousel_item7">
+							<img src="source/img/container7_item4.jpg" class="effect4" alt="Украшение">
+							<div class="lines">
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+								<div class="line"></div>
+							</div>
+							<div class="text">
+								<div class="rating">
+									<span class="star"><img src="source/img/container6_stars.jpg" alt="Рейтинг"></span>
+									<span class="rating_text">13 отзывов</span>
+								</div>
+								<div class="text2">Золотое кольцо с черным опалом</div>
+								<div class="price">
+									<span class="old-price">249 500 ₽</span> 
+									<span class="discount">-30%</span>
+									<span class="new-price"><b>174 650 ₽</b></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="next-button2 mobile-none tablet-none">&gt;</button>
+			</div>
+
+			<div class="container_8">
+				<p>Акции</p>
+				<div id="carouselId1" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner" role="listbox">
+						<div class="carousel-item active">
+							<div class="row">
+								<div class="col-lg-6 col-md-12 col-sm-12">
+									<img class="border__round w-100" src="source/img/container8_item1.jpg" alt="Фото">
+								</div>
+								<div class="col-lg-6 col-md-12 col-sm-12">
+									<img class="border__round w-100" src="source/img/container8_item2.jpg" alt="Фото">
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="row">
+								<div class="col-lg-6 col-md-12 col-sm-12">
+									<img class="border__round w-100" src="source/img/container8_item1.jpg" alt="Фото">
+								</div>
+								<div class="col-lg-6 col-md-12 col-sm-12">
+									<img class="border__round w-100" src="source/img/container8_item2.jpg" alt="Фото">
+								</div>
+							</div>
+						</div>
+						<!-- Добавьте больше элементов здесь -->
+					</div>
+					<a class="carousel-control-prev" href="#carouselId1" role="button" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true">&lt;</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselId1" role="button" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true">&gt;</span>
+					</a>
+				</div>
+					
+			</div>
+
+			<div class="container_9">
+				<p>Полезное</p>
+				<div class="carousel_container9">
+					<button class="mobile-none tablet-none">&lt;</button>
+					<div class="carousel9">
+						<div class="carousel_item9" >
+							<img src="source/img/container9_item1.jpg" alt="Фото" id="photochange" onclick="toggleImageSizeOnClick()">
+								<p class="info">Какие камни Вам подходят?</p>
+								<p class="date">20 марта 2021</p>
+						</div>
+						<div class="carousel_item9">
+							<img src="source/img/container9_item2.jpg" alt="Фото">
+								<p class="info">Как чистить золотые и серебрянные изделия самостоятельно?</p>
+								<p class="date">20 апреля 2021</p>							
+						</div>
+						<div class="carousel_item9">
+							<img src="source/img/container9_item3.jpg" alt="Фото">
+							<p class="info">Новые модели колец, тренды в 2023 году</p>
+							<p class="date">14 апреля 2022</p>
+						</div>
+						<div class="carousel_item9">
+							<img src="source/img/container9_item4.jpg" alt="Фото">
+							<p class="info">10 советов при выборе изделий с бриллиантами</p>
+							<p class="date">5 января 2023</p>
+						</div>
+					</div>
+					<button class="mobile-none tablet-none">&gt;</button>
+				</div>
+			</div>
+				
+		</div>
+		<div class="white">
+			<div class="container_10">
+				<div class="text">
+					<p class="text1">Подпишитесь на нашу рассылку</p>
+					<p class="text2">Получайте уведомления о новых коллекциях и распродажах</p>
+				</div>
+				<div class="form">
+					<input type="email" placeholder="Ваш E-mail?">
+				</div>
+				<div class="button">
+					<button id="openButton" title="Нажмите, чтобы подписаться на рассылку">Подписаться</button>
+				</div>
+			</div>
+		</div>
+		</div>
+	</main>
+	<footer>
+		<div class="footer">
+			<div class="footer-container">
+				<div class="footer-section">
+					<h2><a href="#">Каталог продукции</a></h2>
+					<div class="line"></div>
+					<div class="categories">
+						<div class="category"><a href="#">Кольца</a></div>
+						<div class="category"><a href="#">Серьги</a></div>
+						<div class="category"><a href="#">Браслеты</a></div>
+						<div class="category"><a href="#">Цепи</a></div>
+						<div class="category"><a href="#">Подвески</a></div>
+						<div class="category"><a href="#">Колье</a></div>
+						<div class="category"><a href="#">Пирсинг</a></div>
+						<div class="category"><a href="#">Бусы</a></div>
+						<div class="category"><a href="#">Сувениры</a></div>
+						<div class="category"><a href="#">Броши</a></div>
+						<div class="category"><a href="#">Шнурки</a></div>
+						<div class="category"><a href="#">Аксессуары</a></div>
+					</div>
+				</div>
+				<div class="footer-section">
+					<h2><a href="#">Меню сайта</a></h2>
+					<div class="line"></div>
+					<div class="categories">
+						<div class="category"><a href="#">Салоны</a></div>
+						<div class="category"><a href="#">Распродажа</a></div>
+						<div class="category"><a href="#">Акции</a></div>
+						<div class="category"><a href="#">Скупка</a></div>
+						<div class="category"><a href="#">Статус заказа</a></div>
+						<div class="category"><a href="#">Оплата и доставка</a></div>
+						<div class="category"><a href="#">Гарантия <br>и возврат</a></div>
+					</div>
+				</div>
+				<div class="footer-section">
+					<h2><a href="">Наши контакты</a></h2>
+					<div class="line"></div>
+					<div class="contacts">
+						<div class="contact1">
+							<div class="text">Мы в соц сетях:</div>
+							<div class="social-icons">
+								<a href="#"><img src="source/img/vk_icon.jpg" alt="VK"></a>
+								<a href="#"><img src="source/img/insta_icon.jpg" alt="Instagram"></a>
+							</div>
+							<div class="tel">8 800 450 04 40</div>
+						</div>
+						<div class="contact2">
+							<div class="text">Мы в мессенджере:</div>
+							<div class="social-icons">
+								<a href="#"><img src="source/img/tg_icon.jpg" alt="Telegram"></a>
+								<a href="#"><img src="source/img/viber_icon.jpg" alt="Viber"></a>
+							</div>
+							<div class="mail">info@nebo-jewelry.ru<a href="#"></a></div>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div><img src="source/img/logo_icon.jpg" alt="NEBO Logo"></div>
+				<div class="text">СЕТЬ ЮВЕЛИРНЫХ САЛОНОВ</div>
+				<div class="footer-policy1 mobile-none tablet-none">
+					Политика компании в отношении обработки персональных данных
+				</div>
+				<div class="footer-policy2 mobile-none tablet-none">
+					Сеть ювелирных салонов «НЕБО». Copyright © 2008-2023. Все права защищены
+				</div>
+			</div>
+		</div>
+    </footer>
+	<button id="scrollToTopBtn" title="Go to top">&#8743;</button>
+	<div class="zvonok">
+		<div id="modal1" class="modal1">
+			<div class="modal-content1">
+				<span class="close">&times;</span>
+				<h2>Консультация</h2>
+				<form id="userDataForm">
+					<div>
+						<p><label for="name">Ваше имя</label></p>
+						<p><input type="text" id="name" name="name" placeholder="Введите имя"></p>    
+					</div>
+					<div>
+						<p><label for="surname">Ваша фамилия</label></p>
+						<p><input type="text" id="surname" name="surname" placeholder="Введите фамилию"></p>    
+					</div>
+					<div>
+						<p><label for="phone">Телефон</label></p>
+						<p><input type="tel" id="phone" name="phone" placeholder="Введите номер телефона"></p>
+					</div>
+					<div>
+						<p><label for="mail">Ваша почта</label></p>
+						<p><input type="email" id="mail" name="mail" placeholder="Введите почту"></p>    
+					</div>
+					<button type="submit">Сохранить данные</button>
+					<button type="button" id="clearCookiesBtn">Очистить cookies</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+</body>
+</html>
